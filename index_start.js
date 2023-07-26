@@ -13,11 +13,7 @@ function reverseString(str) {
 // ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
 
 function isPalindrome(str) {
-  if (str === reverseString(str)) {
-    return true;
-  } else {
-    return false;
-  }
+  return str === reverseString(str);
 }
 
 
@@ -26,7 +22,17 @@ function isPalindrome(str) {
 // Return an integer in reverse
 // ex. reverseInt(521) === 125
 
-function reverseInt(int) {}
+function reverseInt(int) {
+  const tni = [];
+  int.toString().split('').forEach((num) => {
+    tni.unshift(num);
+  });
+  if (tni.includes('-')) {
+    const minus = tni.pop();
+    tni.unshift(minus);
+  }
+    return Number(tni.join(''));
+}
 
 
 
@@ -51,6 +57,7 @@ function fizzBuzz() {}
 
 
 // Call Function
-const output = isPalindrome('racecar');
+// const output = isPalindrome('racecar');
+const output = reverseInt(-1234);
 
 console.log(output);
