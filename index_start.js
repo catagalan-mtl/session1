@@ -46,9 +46,9 @@ function reverseInt(int) {
 // Return a string with the first letter of every word capitalized
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
 function capitalizeLetters(str) {
-  arrayPhrase = str.split(' ');
-  newPhrase = arrayPhrase.map((word) => {
-    const arrayWord = word.toLowerCase().split('');
+  const arrayPhrase = str.toLowerCase().split(' ');
+  const newPhrase = arrayPhrase.map((word) => {
+    const arrayWord = word.split('');
     const upper = arrayWord.shift().toUpperCase();
     word = (upper + arrayWord.join(''));
     return word;
@@ -61,7 +61,28 @@ function capitalizeLetters(str) {
 // CHALLENGE 5: MAX CHARACTER
 // Return the character that is most common in a string
 // ex. maxCharacter('javascript') == 'a'
-function maxCharacter(str) {}
+function maxCharacter(str) {
+  const objChar = {};
+  let maxNum = 0;
+  let maxChar = '';
+
+  str.split('').forEach((char) => {
+    if (objChar[char]) {
+      objChar[char]++;
+    } else {
+      objChar[char] = 1;
+    }
+  });
+  for (let char in objChar) {
+    if (objChar[char] > maxNum) {
+      maxNum = objChar[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+  // return(maxChar + ': ' + maxNum);
+};
+
 
 
 
@@ -73,6 +94,6 @@ function fizzBuzz() {}
 
 // Call Function
 // const output = isPalindrome('racecar');
-const output = capitalizeLetters('i loVe jAvasCript');
+const output = maxCharacter('consecuencia');
 
 console.log(output);
