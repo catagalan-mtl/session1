@@ -47,9 +47,8 @@ function reverseInt(int) {
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
 function capitalizeLetters(str) {
   arrayPhrase = str.split(' ');
-  // console.log(array);
   newPhrase = arrayPhrase.map((word) => {
-    const arrayWord = word.split('');
+    const arrayWord = word.toLowerCase().split('');
     const upper = arrayWord.shift().toUpperCase();
     word = (upper + arrayWord.join(''));
     return word;
@@ -74,6 +73,6 @@ function fizzBuzz() {}
 
 // Call Function
 // const output = isPalindrome('racecar');
-const output = capitalizeLetters('i love javascript');
+const output = capitalizeLetters('i loVe jAvasCript');
 
 console.log(output);
