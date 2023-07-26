@@ -32,6 +32,12 @@ function reverseInt(int) {
     tni.unshift(minus);
   }
     return Number(tni.join(''));
+
+    //////////////////// solution:
+
+  // const revString = int.toString().split('').reverse().join('');
+
+  // return parseInt(revString) * Math.sign(int);
 }
 
 
@@ -58,6 +64,6 @@ function fizzBuzz() {}
 
 // Call Function
 // const output = isPalindrome('racecar');
-const output = reverseInt(-1234);
+const output = reverseInt(1234);
 
 console.log(output);
